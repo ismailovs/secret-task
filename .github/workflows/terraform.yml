@@ -30,11 +30,9 @@ jobs:
           echo "aws configure set aws_secret_access_key" $AWS_SECRET_ACCESS_KEY
           aws configure set default.region $AWS_DEFAULT_REGION
           echo "aws configure set default.region" $AWS_DEFAULT_REGION
-               - name: Terraform Init
-        run: terraform init
-
-      - name: Terraform Plan
-        run: terraform plan -out=tfplan
-
-      - name: Terraform Apply
-        run: terraform apply -auto-approve tfplan
+          echo "Terraform Init:"
+          terraform init
+          echo "Terraform Plan:""
+          terraform plan -out=tfplan
+          echo "Terraform Apply:"
+          terraform apply -auto-approve tfplan
