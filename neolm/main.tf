@@ -80,7 +80,7 @@ resource "aws_instance" "my_instance" {
               sudo yum install -y httpd
               sudo systemctl start httpd.service
               sudo systemctl enable httpd.service
-              sudo echo "<h1> At $(hostname -f) done by <b> Shukhrat Ismailov</b> </h1>" > /var/www/html/index.html                   
+              sudo echo "<h1> At $(hostname -f) done by Shukhrat Ismailov </h1>" > /var/www/html/index.html                   
               EOF
   tags = {
     Name = "MyInstance"
