@@ -26,12 +26,13 @@ jobs:
         #working-directory: ./dynamics
       - name: Run Terraform Plan - BamBam
         run: terraform plan
-      - name: Run Terraform Apply
-        run: terraform apply -auto-approve
-        if: github.event_name == 'workflow_dispatch'
+      #- name: Run Terraform Apply
+      # run: terraform destroy -auto-approve
+      # if: github.event_name == 'workflow_dispatch'
       # - name: Time
       #   run: sleep 1000
 
         #working-directory: ./dynamics
-      # - name: Run Terraform Destroy
-      #   run: terraform destroy -auto-approve
+      - name: Run Terraform Destroy
+        run: terraform destroy -auto-approve
+        if: github.event_name == 'workflow_dispatch'
